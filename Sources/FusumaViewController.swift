@@ -311,7 +311,7 @@ public struct ImageMetadata {
 
     override public var prefersStatusBarHidden : Bool {
         
-        return true
+        return false
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
