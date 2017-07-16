@@ -39,9 +39,10 @@ class ViewController: UIViewController, FusumaDelegate {
         let fusuma = FusumaViewController()
         
         fusuma.delegate = self
-        fusuma.cropHeightRatio = 0.6
+        //fusuma.cropHeightRatio = 0.6
         fusuma.defaultMode     = .library
-        fusuma.allowMultipleSelection = true
+        fusuma.allowMultipleSelection = false
+        fusumaBackgroundColor = #colorLiteral(red: 0.6196078431, green: 0.5294117647, blue: 0.7568627451, alpha: 0.6)
         fusumaSavesImage = true
 
         self.present(fusuma, animated: true, completion: nil)
