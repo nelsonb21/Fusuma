@@ -90,7 +90,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         imageCropViewConstraintTop.constant = 50
         dragDirection = Direction.up
         
-        imageCropViewContainer.layer.shadowColor   = UIColor.black.cgColor
+        imageCropViewContainer.layer.shadowColor   = UIColor.clear.cgColor
         imageCropViewContainer.layer.shadowRadius  = 30.0
         imageCropViewContainer.layer.shadowOpacity = 0.9
         imageCropViewContainer.layer.shadowOffset  = CGSize.zero
