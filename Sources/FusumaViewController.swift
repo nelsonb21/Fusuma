@@ -320,7 +320,7 @@ public struct ImageMetadata {
         return false
     }
     
-    func closeButtonPressed() {
+    public func closeButtonPressed() {
         
         self.delegate?.fusumaWillClosed()
         
@@ -345,7 +345,7 @@ public struct ImageMetadata {
         changeMode(FusumaMode.video)
     }
     
-    func doneButtonPressed() {
+    public func doneButtonPressed() {
         
         allowMultipleSelection ? fusumaDidFinishInMultipleMode() : fusumaDidFinishInSingleMode()
     }
