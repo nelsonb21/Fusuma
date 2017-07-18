@@ -87,7 +87,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         self.addGestureRecognizer(panGesture)
         
         collectionViewConstraintHeight.constant = self.frame.height - imageCropViewContainer.frame.height - imageCropViewOriginalConstraintTop
-        imageCropViewConstraintTop.constant = 50.0
+        imageCropViewConstraintTop.constant = 0.0
         dragDirection = Direction.up
         
         imageCropViewContainer.layer.shadowColor   = UIColor.clear.cgColor
