@@ -20,10 +20,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6id-Ro-HHC">
-                            <rect key="frame" x="0.0" y="450" width="400" height="150"/>
+                            <rect key="frame" x="0.0" y="400" width="400" height="200"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="150" id="ofF-eS-Nvv"/>
+                                <constraint firstAttribute="height" constant="200" id="thX-Oa-T0w"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="jnu-mn-3OB">
                                 <size key="itemSize" width="60" height="60"/>
@@ -75,7 +75,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="6id-Ro-HHC" id="NDT-3i-ayr"/>
-                <outlet property="collectionViewConstraintHeight" destination="ofF-eS-Nvv" id="wTG-jf-uwE"/>
+                <outlet property="collectionViewConstraintHeight" destination="thX-Oa-T0w" id="RR5-QU-Mnt"/>
                 <outlet property="imageCropView" destination="Mc5-1c-z7q" id="oCj-GQ-fQS"/>
                 <outlet property="imageCropViewConstraintTop" destination="u5j-7G-j99" id="8dd-IK-PW2"/>
                 <outlet property="imageCropViewContainer" destination="90B-0c-ych" id="UNv-Xg-Rcp"/>

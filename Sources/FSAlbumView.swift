@@ -49,7 +49,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     fileprivate var dragDirection = Direction.up
 
-    private let imageCropViewOriginalConstraintTop: CGFloat = 50.0
+    private let imageCropViewOriginalConstraintTop: CGFloat = 0.0
     private let imageCropViewMinimalVisibleHeight: CGFloat  = 100
     private var imaginaryCollectionViewOffsetStartPosY: CGFloat = 0.0
     
