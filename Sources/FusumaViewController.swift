@@ -550,6 +550,9 @@ private extension FusumaViewController {
             //titleLabel.text = NSLocalizedString(fusumaCameraRollTitle, comment: fusumaCameraRollTitle)
             highlightButton(libraryButton)
             self.view.bringSubview(toFront: photoLibraryViewerContainer)
+            self.photoLibraryViewerContainer.isHidden = false
+            self.cameraShotContainer.isHidden = true
+            self.videoShotContainer.isHidden = true
         
         case .camera:
 
