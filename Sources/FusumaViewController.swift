@@ -560,6 +560,9 @@ private extension FusumaViewController {
             highlightButton(cameraButton)
             self.view.bringSubview(toFront: cameraShotContainer)
             cameraView.startCamera()
+            self.cameraShotContainer.isHidden = false
+            self.photoLibraryViewerContainer.isHidden = false
+            self.videoShotContainer.isHidden = true
             
         case .video:
             
@@ -567,6 +570,9 @@ private extension FusumaViewController {
             highlightButton(videoButton)
             self.view.bringSubview(toFront: videoShotContainer)
             videoView.startCamera()
+            self.videoShotContainer.isHidden = false
+            self.photoLibraryViewerContainer.isHidden = false
+            self.cameraShotContainer.isHidden = true
             
         default:
             
