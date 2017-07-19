@@ -132,7 +132,7 @@ public struct ImageMetadata {
     //
     
     lazy var albumView  = FSAlbumView.instance()
-    lazy var cameraView = FSCameraView.instance()
+    public lazy var cameraView = FSCameraView.instance()
     lazy var videoView  = FSVideoCameraView.instance()
 
     fileprivate var hasGalleryPermission: Bool {

@@ -15,7 +15,7 @@ import Photos
     func cameraShotFinished(_ image: UIImage)
 }
 
-final class FSCameraView: UIView, UIGestureRecognizerDelegate {
+public class FSCameraView: UIView, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var previewViewContainer: UIView!
     @IBOutlet weak var shotButton: UIButton!
@@ -141,7 +141,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func startCamera() {
+    public func startCamera() {
         
         switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
             
