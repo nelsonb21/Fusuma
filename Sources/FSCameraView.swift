@@ -43,7 +43,7 @@ public class FSCameraView: UIView, UIGestureRecognizerDelegate {
         return UINib(nibName: "FSCameraView", bundle: Bundle(for: self.classForCoder())).instantiate(withOwner: self, options: nil)[0] as! FSCameraView
     }
     
-    func initialize() {
+    public func initialize() {
         
         if session != nil { return }
         
