@@ -354,7 +354,7 @@ public struct ImageMetadata {
         
         guard let view = albumView.imageCropView else { return }
         
-        if fusumaCropImage {
+        if !fusumaCropImage {
             
             let normalizedX = view.contentOffset.x / view.contentSize.width
             let normalizedY = view.contentOffset.y / view.contentSize.height
