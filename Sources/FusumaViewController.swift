@@ -371,7 +371,7 @@ public struct ImageMetadata {
                 
                 //self.dismiss(animated: true, completion: {
                     
-                    self.delegate?.fusumaDismissedWithImage(image, source: self.mode)
+                    //self.delegate?.fusumaDismissedWithImage(image, source: self.mode)
                 //})
                 
                 let metaData = ImageMetadata(
