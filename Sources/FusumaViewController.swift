@@ -160,9 +160,6 @@ public struct ImageMetadata {
         albumView.delegate  = self
         videoView.delegate  = self
 
-        //menuView.backgroundColor = fusumaBackgroundColor
-        //menuView.addBottomBorder(UIColor.black, width: 1.0)
-
         albumView.allowMultipleSelection = allowMultipleSelection
         
         let bundle = Bundle(for: self.classForCoder)
@@ -170,20 +167,13 @@ public struct ImageMetadata {
         // Get the custom button images if they're set
         let albumImage = fusumaAlbumImage != nil ? fusumaAlbumImage : UIImage(named: "ic_insert_photo", in: bundle, compatibleWith: nil)
         let cameraImage = fusumaCameraImage != nil ? fusumaCameraImage : UIImage(named: "ic_photo_camera", in: bundle, compatibleWith: nil)
-        
         let videoImage = fusumaVideoImage != nil ? fusumaVideoImage : UIImage(named: "ic_videocam", in: bundle, compatibleWith: nil)
 
-        
-        let checkImage = fusumaCheckImage != nil ? fusumaCheckImage : UIImage(named: "ic_check", in: bundle, compatibleWith: nil)
-        let closeImage = fusumaCloseImage != nil ? fusumaCloseImage : UIImage(named: "ic_close", in: bundle, compatibleWith: nil)
-        
         if fusumaTintIcons {
             
             let albumImage  = albumImage?.withRenderingMode(.alwaysTemplate)
             let cameraImage = cameraImage?.withRenderingMode(.alwaysTemplate)
-            let closeImage  = closeImage?.withRenderingMode(.alwaysTemplate)
             let videoImage  = videoImage?.withRenderingMode(.alwaysTemplate)
-            let checkImage  = checkImage?.withRenderingMode(.alwaysTemplate)
 
             libraryButton.setImage(albumImage, for: UIControlState())
             libraryButton.setImage(albumImage, for: .highlighted)
@@ -197,24 +187,12 @@ public struct ImageMetadata {
             cameraButton.tintColor = fusumaTintColor
             cameraButton.adjustsImageWhenHighlighted = false
             
-            /*closeButton.setImage(closeImage, for: UIControlState())
-            closeButton.setImage(closeImage, for: .highlighted)
-            closeButton.setImage(closeImage, for: .selected)
-            closeButton.tintColor = fusumaBaseTintColor*/
-            
             videoButton.setImage(videoImage, for: UIControlState())
             videoButton.setImage(videoImage, for: .highlighted)
             videoButton.setImage(videoImage, for: .selected)
             videoButton.tintColor = fusumaTintColor
             videoButton.adjustsImageWhenHighlighted = false
-            
-            /*doneButton.setImage(checkImage, for: UIControlState())
-            doneButton.setImage(checkImage, for: .highlighted)
-            doneButton.setImage(checkImage, for: .selected)
-            doneButton.tintColor = fusumaBaseTintColor*/
-            
         } else {
-            
             libraryButton.setImage(albumImage, for: UIControlState())
             libraryButton.setImage(albumImage, for: .highlighted)
             libraryButton.setImage(albumImage, for: .selected)
@@ -229,9 +207,6 @@ public struct ImageMetadata {
             videoButton.setImage(videoImage, for: .highlighted)
             videoButton.setImage(videoImage, for: .selected)
             videoButton.tintColor = nil
-            
-            //closeButton.setImage(closeImage, for: UIControlState())
-            //doneButton.setImage(checkImage, for: UIControlState())
         }
         
         cameraButton.clipsToBounds  = true
@@ -242,10 +217,7 @@ public struct ImageMetadata {
         cameraShotContainer.addSubview(cameraView)
         videoShotContainer.addSubview(videoView)
         
-        //titleLabel.textColor = fusumaBaseTintColor
-        //titleLabel.font      = fusumaTitleFont
-        
-        if !hasVideo {
+        /*if !hasVideo {
             
             videoButton.removeFromSuperview()
             
@@ -258,7 +230,7 @@ public struct ImageMetadata {
                 multiplier: 1.0,
                 constant:   0
             ))
-        }
+        }*/
         
         if fusumaCropImage {
             
@@ -300,7 +272,6 @@ public struct ImageMetadata {
         cameraView.initialize()
         
         if hasVideo {
-
             videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
             videoView.layoutIfNeeded()
             videoView.initialize()
@@ -321,13 +292,8 @@ public struct ImageMetadata {
     }
     
     public func closeButtonPressed() {
-        
         self.delegate?.fusumaWillClosed()
-        
-        //self.dismiss(animated: true) {
-        
-            self.delegate?.fusumaClosed()
-        //}
+        self.delegate?.fusumaClosed()
     }
     
     @IBAction func libraryButtonPressed(_ sender: UIButton) {
