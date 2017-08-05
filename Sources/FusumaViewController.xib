@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FusumaViewController" customModule="Fusuma" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundBlur" destination="njZ-NF-b4z" id="uvu-hg-tHT"/>
-                <outlet property="backgroundImageView" destination="tsS-4g-dCT" id="IwG-eV-KfB"/>
                 <outlet property="cameraButton" destination="sCN-QB-mCu" id="tC3-i4-xpG"/>
                 <outlet property="cameraShotContainer" destination="CFH-FU-LPW" id="gvI-wh-cln"/>
                 <outlet property="libraryButton" destination="cph-QM-jcJ" id="a4Y-xk-mq9"/>
@@ -27,15 +26,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-4g-dCT">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                </imageView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njZ-NF-b4z">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ncm-Mu-s6T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.61960784310000006" green="0.52941176469999995" blue="0.75686274509999996" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61960784310000006" green="0.52941176469999995" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <blurEffect style="light"/>
                 </visualEffectView>
@@ -96,10 +92,7 @@
                 <constraint firstAttribute="bottom" secondItem="njZ-NF-b4z" secondAttribute="bottom" id="02C-R6-liR"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0rm-S1-9o9"/>
                 <constraint firstItem="sCN-QB-mCu" firstAttribute="leading" secondItem="cph-QM-jcJ" secondAttribute="trailing" id="8Df-A3-2bv"/>
-                <constraint firstAttribute="trailing" secondItem="tsS-4g-dCT" secondAttribute="trailing" id="DNw-rv-h3K"/>
                 <constraint firstAttribute="bottom" secondItem="sCN-QB-mCu" secondAttribute="bottom" id="Eol-81-9UT"/>
-                <constraint firstItem="tsS-4g-dCT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="G5L-lN-Oev"/>
-                <constraint firstAttribute="bottom" secondItem="tsS-4g-dCT" secondAttribute="bottom" id="GkV-Ua-aju"/>
                 <constraint firstItem="sCN-QB-mCu" firstAttribute="top" secondItem="cph-QM-jcJ" secondAttribute="top" id="K1G-U0-Vgk"/>
                 <constraint firstAttribute="trailing" secondItem="njZ-NF-b4z" secondAttribute="trailing" id="Ob6-wx-U1c"/>
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QcH-4o-bGU"/>
@@ -113,7 +106,6 @@
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="dTI-0B-myd"/>
                 <constraint firstItem="RIt-Tt-mDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gTV-NE-IMv"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gbM-f6-jpP"/>
-                <constraint firstItem="tsS-4g-dCT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hjL-DY-rgf"/>
                 <constraint firstItem="8ew-Zi-63G" firstAttribute="leading" secondItem="sCN-QB-mCu" secondAttribute="trailing" id="lX7-Hu-YUi"/>
                 <constraint firstItem="cph-QM-jcJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r6i-pH-gQl"/>
                 <constraint firstItem="RIt-Tt-mDz" firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="u9n-zf-deV"/>

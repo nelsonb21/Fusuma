@@ -19,6 +19,7 @@ final class FSVideoCameraView: UIView {
     @IBOutlet weak var shotButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
+    @IBOutlet weak var videoProgressView: UIProgressView?
     
     weak var delegate: FSVideoCameraViewDelegate? = nil
     
@@ -33,6 +34,12 @@ final class FSVideoCameraView: UIView {
     var videoStartImage: UIImage?
     var videoStopImage: UIImage?
 
+    var shouldRotate = false
+    //ProgressView
+    var audioTimeCounter =  0.0
+    var audioLimitTime = 30.0
+    var timer = Timer()
+    var timerIsOn = false
     
     fileprivate var isRecording = false
     
@@ -112,17 +119,17 @@ final class FSVideoCameraView: UIView {
             
             flashButton.tintColor = fusumaBaseTintColor
             flipButton.tintColor  = fusumaBaseTintColor
-            shotButton.tintColor  = fusumaBaseTintColor
+            //shotButton.tintColor  = fusumaBaseTintColor
             
             flashButton.setImage(flashOffImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
             flipButton.setImage(flipImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
-            shotButton.setImage(videoStartImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
+            //shotButton.setImage(videoStartImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
             
         } else {
             
             flashButton.setImage(flashOffImage, for: UIControlState())
             flipButton.setImage(flipImage, for: UIControlState())
-            shotButton.setImage(videoStartImage, for: UIControlState())
+            //shotButton.setImage(videoStartImage, for: UIControlState())
         }
         
         flashConfiguration()
@@ -269,6 +276,10 @@ fileprivate extension FSVideoCameraView {
         
         if self.isRecording {
             
+            updateProgressView()
+            shouldRotate = true
+            rotateView(targetView: shotButton)
+            
             let outputPath = "\(NSTemporaryDirectory())output.mov"
             let outputURL = URL(fileURLWithPath: outputPath)
             
@@ -292,7 +303,8 @@ fileprivate extension FSVideoCameraView {
             videoOutput.startRecording(toOutputFileURL: outputURL, recordingDelegate: self)
             
         } else {
-            
+            stopTimer()
+            shouldRotate = false
             videoOutput.stopRecording()
             self.flipButton.isEnabled = true
             self.flashButton.isEnabled = true
@@ -378,5 +390,41 @@ fileprivate extension FSVideoCameraView {
             
             return
         }
+    }
+    
+    private func rotateView(targetView: UIView, duration: Double = 1.0) {
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveLinear, animations: {
+            targetView.transform = targetView.transform.rotated(by: CGFloat(Double.pi))
+        }) { finished in
+            if self.shouldRotate {
+                self.rotateView(targetView: targetView, duration: duration)
+            }
+        }
+    }
+}
+
+fileprivate extension FSVideoCameraView {
+    
+    func updateProgressView() {
+        videoProgressView?.trackTintColor = .lightGray
+        if !timerIsOn {
+            timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(timerRunning), userInfo: nil, repeats: true)
+            timerIsOn = true
+        }
+    }
+    
+    @objc func timerRunning() {
+        audioTimeCounter += 0.0001
+        let completionPercentage = (audioTimeCounter * 100) / audioLimitTime
+        videoProgressView?.setProgress(Float(completionPercentage / 100), animated: true)
+        if audioTimeCounter >= audioLimitTime {
+            stopTimer()
+            toggleRecording()
+        }
+    }
+    
+    func stopTimer() {
+        timer.invalidate()
+        timerIsOn = false
     }
 }

@@ -245,12 +245,12 @@ public struct ImageMetadata {
                 multiplier: heightRatio,
                 constant: 0)
 
-            cameraView.fullAspectRatioConstraint.isActive     = false
+            cameraView.fullAspectRatioConstraint?.isActive     = false
             cameraView.croppedAspectRatioConstraint?.isActive = true
             
         } else {
             
-            cameraView.fullAspectRatioConstraint.isActive     = true
+            cameraView.fullAspectRatioConstraint?.isActive     = true
             cameraView.croppedAspectRatioConstraint?.isActive = false
         }
         
@@ -536,6 +536,8 @@ private extension FusumaViewController {
             highlightButton(videoButton)
             self.view.bringSubview(toFront: videoShotContainer)
             videoView.startCamera()
+            self.videoView.audioTimeCounter = 0.0
+            self.videoView.videoProgressView?.progress = 0.0
             self.videoShotContainer.isHidden = false
             self.photoLibraryViewerContainer.isHidden = false
             self.cameraShotContainer.isHidden = true

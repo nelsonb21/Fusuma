@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,17 +16,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-pW-0DW">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="0hK-pW-0DW" secondAttribute="height" multiplier="1:1" id="EYm-IN-2Mh"/>
-                    </constraints>
                 </view>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iR3-85-h4W">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="XBI-RW-l9l"/>
+                    </constraints>
+                    <color key="progressTintColor" red="0.50195999999999996" green="0.39607999999999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-EB-weA">
-                    <rect key="frame" x="0.0" y="400" width="400" height="200"/>
+                    <rect key="frame" x="0.0" y="500" width="400" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPV-fC-75T">
-                            <rect key="frame" x="15" y="80" width="40" height="40"/>
+                            <rect key="frame" x="15" y="30" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GcK-Ga-JH3"/>
                                 <constraint firstAttribute="height" constant="40" id="TcK-3W-Kpf"/>
@@ -39,19 +42,27 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-ro-bt6">
-                            <rect key="frame" x="166" y="66" width="68" height="68"/>
+                            <rect key="frame" x="175" y="25" width="50" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="68" id="BsM-o7-FiY"/>
-                                <constraint firstAttribute="width" constant="68" id="ggw-fN-Nue"/>
+                                <constraint firstAttribute="height" constant="50" id="BsM-o7-FiY"/>
+                                <constraint firstAttribute="width" constant="50" id="ggw-fN-Nue"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                             <state key="normal" image="video_button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Os-rN-KMh">
+                            <rect key="frame" x="175" y="25" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="6jC-9a-YAA"/>
+                                <constraint firstAttribute="height" constant="50" id="MiE-sA-VDq"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                             <connections>
-                                <action selector="shotButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="sNT-eM-y2G"/>
+                                <action selector="shotButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="RYv-u0-Kqo"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-QZ-jPz">
-                            <rect key="frame" x="345" y="80" width="40" height="40"/>
+                            <rect key="frame" x="345" y="30" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="C6F-2l-AWm"/>
                                 <constraint firstAttribute="height" constant="40" id="OR0-eQ-5pN"/>
@@ -65,9 +76,12 @@
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="6Os-rN-KMh" firstAttribute="centerY" secondItem="cpy-ro-bt6" secondAttribute="centerY" id="1tT-AC-WD5"/>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerX" secondItem="6gh-EB-weA" secondAttribute="centerX" id="CPa-UK-eV1"/>
                         <constraint firstItem="oPV-fC-75T" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="D1d-s9-DBb"/>
+                        <constraint firstAttribute="height" constant="100" id="G6v-wj-9i4"/>
                         <constraint firstItem="oPV-fC-75T" firstAttribute="leading" secondItem="6gh-EB-weA" secondAttribute="leading" constant="15" id="GTv-Vt-Mwd"/>
+                        <constraint firstItem="6Os-rN-KMh" firstAttribute="centerX" secondItem="cpy-ro-bt6" secondAttribute="centerX" id="Lbp-jT-nCb"/>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="USf-rF-Oy8"/>
                         <constraint firstItem="yHq-QZ-jPz" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="udF-Hg-0iR"/>
                         <constraint firstAttribute="trailing" secondItem="yHq-QZ-jPz" secondAttribute="trailing" constant="15" id="x4Y-A2-snd"/>
@@ -77,12 +91,15 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6gh-EB-weA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8DC-7U-0Ht"/>
+                <constraint firstAttribute="trailing" secondItem="iR3-85-h4W" secondAttribute="trailing" id="Eu8-dY-YmR"/>
+                <constraint firstAttribute="bottom" secondItem="0hK-pW-0DW" secondAttribute="bottom" id="I9J-EJ-AkQ"/>
                 <constraint firstAttribute="bottom" secondItem="6gh-EB-weA" secondAttribute="bottom" id="IOQ-4M-Rye"/>
                 <constraint firstAttribute="trailing" secondItem="6gh-EB-weA" secondAttribute="trailing" id="Lge-9D-s38"/>
+                <constraint firstItem="iR3-85-h4W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="S2v-cr-BcN"/>
                 <constraint firstItem="0hK-pW-0DW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZtF-xP-XL4"/>
+                <constraint firstItem="iR3-85-h4W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="smZ-cr-uNv"/>
                 <constraint firstItem="0hK-pW-0DW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="snf-T0-XlH"/>
                 <constraint firstAttribute="trailing" secondItem="0hK-pW-0DW" secondAttribute="trailing" id="syg-FP-hcI"/>
-                <constraint firstItem="6gh-EB-weA" firstAttribute="top" secondItem="0hK-pW-0DW" secondAttribute="bottom" id="t3B-Bo-8p1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -90,6 +107,7 @@
                 <outlet property="flipButton" destination="oPV-fC-75T" id="J96-fz-NnG"/>
                 <outlet property="previewViewContainer" destination="0hK-pW-0DW" id="8bh-3S-jSb"/>
                 <outlet property="shotButton" destination="cpy-ro-bt6" id="SbF-vE-c2o"/>
+                <outlet property="videoProgressView" destination="iR3-85-h4W" id="Epu-yr-Sx6"/>
             </connections>
             <point key="canvasLocation" x="519" y="448"/>
         </view>
@@ -97,6 +115,6 @@
     <resources>
         <image name="ic_flash_off" width="48" height="48"/>
         <image name="ic_loop" width="48" height="48"/>
-        <image name="video_button" width="40" height="40"/>
+        <image name="video_button" width="69" height="66"/>
     </resources>
 </document>

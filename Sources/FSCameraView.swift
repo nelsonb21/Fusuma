@@ -21,7 +21,7 @@ public class FSCameraView: UIView, UIGestureRecognizerDelegate {
     @IBOutlet weak var shotButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
-    @IBOutlet weak var fullAspectRatioConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fullAspectRatioConstraint: NSLayoutConstraint?
     var croppedAspectRatioConstraint: NSLayoutConstraint?
     
     weak var delegate: FSCameraViewDelegate? = nil
@@ -60,11 +60,11 @@ public class FSCameraView: UIView, UIGestureRecognizerDelegate {
             
             flashButton.tintColor = fusumaBaseTintColor
             flipButton.tintColor  = fusumaBaseTintColor
-            shotButton.tintColor  = fusumaBaseTintColor
+            //shotButton.tintColor  = fusumaBaseTintColor
             
             flashButton.setImage(flashOffImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
             flipButton.setImage(flipImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
-            shotButton.setImage(shotImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
+            //shotButton.setImage(shotImage?.withRenderingMode(.alwaysTemplate), for: UIControlState())
         
         } else {
         
