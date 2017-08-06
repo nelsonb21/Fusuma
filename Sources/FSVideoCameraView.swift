@@ -246,6 +246,12 @@ final class FSVideoCameraView: UIView {
             return
         }
     }
+    
+    func resetVideoView() {
+        videoView.startCamera()
+        videoView.audioTimeCounter = 0.0
+        videoView.videoProgressView?.progress = 0.0
+    }
 }
 
 extension FSVideoCameraView: AVCaptureFileOutputRecordingDelegate {

@@ -19,11 +19,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iR3-85-h4W">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="4"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="4" id="XBI-RW-l9l"/>
-                    </constraints>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="iR3-85-h4W">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="2.666666666666667"/>
                     <color key="progressTintColor" red="0.50195999999999996" green="0.39607999999999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </progressView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-EB-weA">

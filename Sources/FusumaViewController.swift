@@ -444,11 +444,7 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     func cameraShotFinished(_ image: UIImage) {
         
         delegate?.fusumaImageSelected(image, source: mode)
-        
-        //self.dismiss(animated: true) {
-            
-            self.delegate?.fusumaDismissedWithImage(image, source: self.mode)
-        //}
+        self.delegate?.fusumaDismissedWithImage(image, source: self.mode)
     }
     
     public func albumViewCameraRollAuthorized() {
@@ -465,9 +461,8 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     }
     
     func videoFinished(withFileURL fileURL: URL) {
-        
+        videoView.resetVideoView()
         delegate?.fusumaVideoCompleted(withFileURL: fileURL)
-        //self.dismiss(animated: true, completion: nil)
     }
     
 }
