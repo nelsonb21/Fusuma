@@ -248,9 +248,9 @@ final class FSVideoCameraView: UIView {
     }
     
     func resetVideoView() {
-        videoView.startCamera()
-        videoView.audioTimeCounter = 0.0
-        videoView.videoProgressView?.progress = 0.0
+        startCamera()
+        audioTimeCounter = 0.0
+        videoProgressView?.progress = 0.0
     }
 }
 
