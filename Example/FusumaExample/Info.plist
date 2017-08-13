@@ -26,6 +26,8 @@
 	<string>The app will allow you to capture images from your device camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The app will allow you to choose images from your photo library.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need to access your microphone in order to record videos</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
