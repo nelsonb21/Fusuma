@@ -66,6 +66,12 @@ final class FSVideoCameraView: UIView {
             }
         }
         
+        for device in AVCaptureDevice.devices(withMediaType: AVMediaTypeAudio) {
+            let device = device as? AVCaptureDevice
+            let audioInput = try! AVCaptureDeviceInput(device: device)
+            session.addInput(audioInput)
+        }
+        
         do {
             
             videoInput = try AVCaptureDeviceInput(device: device)
@@ -169,6 +175,12 @@ final class FSVideoCameraView: UIView {
                     videoInput = try AVCaptureDeviceInput(device: device)
                     session.addInput(videoInput)
                 }
+            }
+            
+            for device in AVCaptureDevice.devices(withMediaType: AVMediaTypeAudio) {
+                let device = device as? AVCaptureDevice
+                let audioInput = try! AVCaptureDeviceInput(device: device)
+                session.addInput(audioInput)
             }
             
             session.commitConfiguration()
