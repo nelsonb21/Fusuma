@@ -494,6 +494,7 @@ private extension FusumaViewController {
         case .video:
             highlightButton(videoButton)
             self.view.bringSubview(toFront: videoShotContainer)
+            videoView.initialize()
             videoView.startCamera()
             self.videoView.videoTimeCounter = 0.0
             self.videoView.videoProgressView?.progress = 0.0
