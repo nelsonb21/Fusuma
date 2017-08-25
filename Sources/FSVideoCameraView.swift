@@ -265,6 +265,7 @@ fileprivate extension FSVideoCameraView {
             
             self.flipButton.isEnabled = false
             self.flashButton.isEnabled = false
+            session?.addOutput(videoOutput)
             videoOutput.startRecording(toOutputFileURL: outputURL, recordingDelegate: self)
             
         } else {
