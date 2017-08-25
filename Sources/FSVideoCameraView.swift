@@ -49,7 +49,7 @@ final class FSVideoCameraView: UIView {
     
     func initialize() {
         
-        if session != nil { return }
+        //if session != nil { return }
         
         self.backgroundColor = fusumaBackgroundColor
         
@@ -265,7 +265,6 @@ fileprivate extension FSVideoCameraView {
             
             self.flipButton.isEnabled = false
             self.flashButton.isEnabled = false
-            session?.addOutput(videoOutput)
             videoOutput.startRecording(toOutputFileURL: outputURL, recordingDelegate: self)
             
         } else {
