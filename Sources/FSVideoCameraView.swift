@@ -36,8 +36,8 @@ final class FSVideoCameraView: UIView {
 
     var shouldRotate = false
     //ProgressView
-    var audioTimeCounter =  0.0
-    var audioLimitTime = 30.0
+    var videoTimeCounter =  0.0
+    var videoLimitTime = 30.0
     var timer = Timer()
     var timerIsOn = false
     
@@ -215,9 +215,9 @@ final class FSVideoCameraView: UIView {
     
     func resetVideoView() {
         startCamera()
-        audioTimeCounter = 0.0
+        videoTimeCounter = 0.0
         videoProgressView?.progress = 0.0
-        videoProgressView?.isHidden = true
+        videoProgressView?.trackTintColor = .clear
     }
 }
 
@@ -362,10 +362,10 @@ fileprivate extension FSVideoCameraView {
     }
     
     @objc func timerRunning() {
-        audioTimeCounter += 0.0001
-        let completionPercentage = (audioTimeCounter * 100) / audioLimitTime
+        videoTimeCounter += 0.0001
+        let completionPercentage = (videoTimeCounter * 100) / videoLimitTime
         videoProgressView?.setProgress(Float(completionPercentage / 100), animated: true)
-        if audioTimeCounter >= audioLimitTime {
+        if videoTimeCounter >= videoLimitTime {
             stopTimer()
             toggleRecording()
         }

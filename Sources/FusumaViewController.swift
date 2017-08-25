@@ -495,7 +495,7 @@ private extension FusumaViewController {
             highlightButton(videoButton)
             self.view.bringSubview(toFront: videoShotContainer)
             videoView.startCamera()
-            self.videoView.audioTimeCounter = 0.0
+            self.videoView.videoTimeCounter = 0.0
             self.videoView.videoProgressView?.progress = 0.0
             self.videoShotContainer.isHidden = false
             self.photoLibraryViewerContainer.isHidden = false
