@@ -241,16 +241,16 @@ public struct ImageMetadata {
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //albumView.frame  = CGRect(origin: CGPoint.zero, size: photoLibraryViewerContainer.frame.size)
+        albumView.frame  = CGRect(origin: CGPoint.zero, size: photoLibraryViewerContainer.frame.size)
         albumView.layoutIfNeeded()
-        //cameraView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
+        cameraView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
         cameraView.layoutIfNeeded()
 
         albumView.initialize()
         cameraView.initialize()
         
         if hasVideo {
-            //videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
+            videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
             videoView.layoutIfNeeded()
             videoView.initialize()
         }
@@ -262,15 +262,6 @@ public struct ImageMetadata {
         
         super.viewWillDisappear(animated)
         //self.stopAll()
-    }
-    
-    public override func viewWillLayoutSubviews() {
-        albumView.frame  = CGRect(origin: CGPoint.zero, size: photoLibraryViewerContainer.frame.size)
-        cameraView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
-        
-        if hasVideo {
-            videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
-        }
     }
 
     override public var prefersStatusBarHidden : Bool {
