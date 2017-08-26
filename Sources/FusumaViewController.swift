@@ -335,10 +335,7 @@ public struct ImageMetadata {
             let dimensionH   = dimensionW * self.getCropHeightRatio()
             let targetSize   = CGSize(width: dimensionW, height: dimensionH)
             
-            PHImageManager.default().requestImage(
-                for: asset, targetSize: targetSize,
-                contentMode: .aspectFill, options: options) { result, info in
-
+            PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: options) { result, info in
                 guard let result = result else { return }
                     
                 DispatchQueue.main.async(execute: {
@@ -354,12 +351,10 @@ public struct ImageMetadata {
         
         let normalizedX = view.contentOffset.x / view.contentSize.width
         let normalizedY = view.contentOffset.y / view.contentSize.height
-        
         let normalizedWidth  = view.frame.width / view.contentSize.width
         let normalizedHeight = view.frame.height / view.contentSize.height
         
-        let cropRect = CGRect(x: normalizedX, y: normalizedY,
-                              width: normalizedWidth, height: normalizedHeight)
+        let cropRect = CGRect(x: normalizedX, y: normalizedY, width: normalizedWidth, height: normalizedHeight)
         
         var images = [UIImage]()
         

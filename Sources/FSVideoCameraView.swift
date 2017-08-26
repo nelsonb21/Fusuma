@@ -73,7 +73,6 @@ final class FSVideoCameraView: UIView {
         }
         
         do {
-            
             videoInput = try AVCaptureDeviceInput(device: device)
             
             session.addInput(videoInput)
@@ -81,7 +80,6 @@ final class FSVideoCameraView: UIView {
             videoOutput = AVCaptureMovieFileOutput()
             let totalSeconds = 31.0 //Total Seconds of capture time
             let timeScale: Int32 = 30 //FPS
-            
             let maxDuration = CMTimeMakeWithSeconds(totalSeconds, timeScale)
             
             videoOutput?.maxRecordedDuration = maxDuration
@@ -125,7 +123,6 @@ final class FSVideoCameraView: UIView {
         }
         
         flashConfiguration()
-        
         self.startCamera()
     }
     
@@ -146,7 +143,6 @@ final class FSVideoCameraView: UIView {
         if self.isRecording {
             self.toggleRecording()
         }
-        
         session?.stopRunning()
     }
     
@@ -155,9 +151,7 @@ final class FSVideoCameraView: UIView {
     }
     
     @IBAction func flipButtonPressed(_ sender: UIButton) {
-        
         guard let session = session else { return }
-        
         session.stopRunning()
         
         do {
@@ -205,7 +199,6 @@ final class FSVideoCameraView: UIView {
             default:
                 break
             }
-            
             device.unlockForConfiguration()
         } catch {
             flashButton.setImage(flashOffImage, for: UIControlState())
@@ -236,7 +229,6 @@ extension FSVideoCameraView: AVCaptureFileOutputRecordingDelegate {
 fileprivate extension FSVideoCameraView {
     
     func toggleRecording() {
-        
         guard let videoOutput = videoOutput else { return }
         self.isRecording = !self.isRecording
         let shotImage = self.isRecording ? videoStopImage : videoStartImage
