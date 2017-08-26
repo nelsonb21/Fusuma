@@ -26,7 +26,7 @@ public class FSCameraView: UIView, UIGestureRecognizerDelegate {
     
     weak var delegate: FSCameraViewDelegate? = nil
     
-    fileprivate var session: AVCaptureSession?
+    var session: AVCaptureSession?
     fileprivate var device: AVCaptureDevice?
     fileprivate var videoInput: AVCaptureDeviceInput?
     fileprivate var imageOutput: AVCaptureStillImageOutput?

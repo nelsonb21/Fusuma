@@ -429,6 +429,8 @@ private extension FusumaViewController {
         
         switch mode {
         case .library:
+            videoView.session = nil
+            cameraView.session = nil
             highlightButton(libraryButton)
             self.view.bringSubview(toFront: photoLibraryViewerContainer)
             self.photoLibraryViewerContainer.isHidden = false
@@ -436,8 +438,9 @@ private extension FusumaViewController {
             self.videoShotContainer.isHidden = true
             
         case .camera:
+            videoView.session = nil
             highlightButton(cameraButton)
-            self.view.bringSubview(toFront: cameraShotContainer)
+            view.bringSubview(toFront: cameraShotContainer)
             cameraView.initialize()
             cameraView.startCamera()
             self.cameraShotContainer.isHidden = false
@@ -445,8 +448,9 @@ private extension FusumaViewController {
             self.videoShotContainer.isHidden = true
             
         case .video:
+            cameraView.session = nil
             highlightButton(videoButton)
-            self.view.bringSubview(toFront: videoShotContainer)
+            view.bringSubview(toFront: videoShotContainer)
             videoView.initialize()
             videoView.startCamera()
             self.videoView.videoTimeCounter = 0.0
