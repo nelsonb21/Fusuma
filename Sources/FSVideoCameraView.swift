@@ -234,7 +234,6 @@ fileprivate extension FSVideoCameraView {
         shotButton.setImage(shotImage, for: UIControlState())
         
         if self.isRecording {
-            
             updateProgressView()
             shouldRotate = true
             rotateView(targetView: shotButton)
@@ -257,7 +256,6 @@ fileprivate extension FSVideoCameraView {
             self.flipButton.isEnabled = false
             self.flashButton.isEnabled = false
             videoOutput.startRecording(toOutputFileURL: outputURL, recordingDelegate: self)
-            
         } else {
             stopTimer()
             shouldRotate = false
