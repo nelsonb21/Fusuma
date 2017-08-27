@@ -242,8 +242,10 @@ public struct ImageMetadata {
         super.viewDidAppear(animated)
         
         albumView.frame  = CGRect(origin: CGPoint.zero, size: photoLibraryViewerContainer.frame.size)
+        albumView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         albumView.layoutIfNeeded()
         cameraView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
+        cameraView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         cameraView.layoutIfNeeded()
 
         albumView.initialize()
@@ -251,6 +253,7 @@ public struct ImageMetadata {
         
         if hasVideo {
             videoView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
+            videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             videoView.layoutIfNeeded()
             videoView.initialize()
         }
