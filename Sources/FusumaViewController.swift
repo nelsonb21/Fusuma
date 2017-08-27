@@ -496,6 +496,9 @@ private extension FusumaViewController {
             
         case .video:
             highlightButton(videoButton)
+            videoShotContainer.layoutSubviews()
+            videoShotContainer.layoutIfNeeded()
+            videoView.layoutIfNeeded()
             self.view.bringSubview(toFront: videoShotContainer)
             videoView.initialize()
             videoView.startCamera()
