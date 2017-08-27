@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FusumaViewController" customModule="Fusuma" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundBlur" destination="njZ-NF-b4z" id="uvu-hg-tHT"/>
                 <outlet property="cameraButton" destination="sCN-QB-mCu" id="tC3-i4-xpG"/>
                 <outlet property="cameraShotContainer" destination="CFH-FU-LPW" id="gvI-wh-cln"/>
                 <outlet property="libraryButton" destination="cph-QM-jcJ" id="a4Y-xk-mq9"/>
@@ -26,15 +25,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njZ-NF-b4z">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ncm-Mu-s6T">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.61960784310000006" green="0.52941176469999995" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <blurEffect style="light"/>
-                </visualEffectView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIt-Tt-mDz" userLabel="Video View">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="691"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,27 +82,23 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.61960784310000006" green="0.52941176469999995" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="njZ-NF-b4z" secondAttribute="bottom" id="02C-R6-liR"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0LO-IV-he7"/>
-                <constraint firstItem="RIt-Tt-mDz" firstAttribute="centerX" secondItem="CFH-FU-LPW" secondAttribute="centerX" id="3ai-H9-Krh"/>
+                <constraint firstItem="RIt-Tt-mDz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AWP-if-S4C"/>
+                <constraint firstAttribute="trailing" secondItem="RIt-Tt-mDz" secondAttribute="trailing" id="J15-jt-IYI"/>
                 <constraint firstAttribute="trailing" secondItem="CFH-FU-LPW" secondAttribute="trailing" id="J3I-dU-SJx"/>
                 <constraint firstAttribute="trailing" secondItem="2FB-nh-pGx" secondAttribute="trailing" id="Ke7-wP-Jnx"/>
-                <constraint firstItem="RIt-Tt-mDz" firstAttribute="centerY" secondItem="CFH-FU-LPW" secondAttribute="centerY" id="Kfs-jb-aSv"/>
-                <constraint firstAttribute="trailing" secondItem="njZ-NF-b4z" secondAttribute="trailing" id="Ob6-wx-U1c"/>
                 <constraint firstItem="2FB-nh-pGx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qd2-OJ-gr6"/>
                 <constraint firstItem="2FB-nh-pGx" firstAttribute="top" secondItem="1Pk-29-mUG" secondAttribute="bottom" id="S2c-0X-0qP"/>
-                <constraint firstItem="njZ-NF-b4z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wsa-j5-7bv"/>
-                <constraint firstItem="RIt-Tt-mDz" firstAttribute="height" secondItem="CFH-FU-LPW" secondAttribute="height" id="c5m-gD-r2X"/>
                 <constraint firstAttribute="bottom" secondItem="2FB-nh-pGx" secondAttribute="bottom" id="cZ0-xA-QEC"/>
                 <constraint firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="dqx-Do-Jr9"/>
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gvd-qW-Mru"/>
+                <constraint firstItem="RIt-Tt-mDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lKC-2u-TbQ"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pAu-vo-YZi"/>
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pUS-je-GE0"/>
                 <constraint firstItem="2FB-nh-pGx" firstAttribute="top" secondItem="CFH-FU-LPW" secondAttribute="bottom" id="th5-Gc-A6E"/>
-                <constraint firstItem="njZ-NF-b4z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="unD-hJ-K2Q"/>
-                <constraint firstItem="RIt-Tt-mDz" firstAttribute="width" secondItem="CFH-FU-LPW" secondAttribute="width" id="w0r-OW-rpW"/>
+                <constraint firstItem="2FB-nh-pGx" firstAttribute="top" secondItem="RIt-Tt-mDz" secondAttribute="bottom" id="vHA-eJ-lgw"/>
             </constraints>
         </view>
     </objects>

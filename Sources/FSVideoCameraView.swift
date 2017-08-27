@@ -48,11 +48,8 @@ final class FSVideoCameraView: UIView {
     }
     
     func initialize() {
-        
-        //if session != nil { return }
-        
+        if session != nil { return }
         self.backgroundColor = fusumaBackgroundColor
-        
         self.isHidden = false
         
         // AVCapture
@@ -73,7 +70,6 @@ final class FSVideoCameraView: UIView {
         }
         
         do {
-            
             videoInput = try AVCaptureDeviceInput(device: device)
             
             session.addInput(videoInput)
@@ -126,7 +122,7 @@ final class FSVideoCameraView: UIView {
         
         flashConfiguration()
         
-        self.startCamera()
+        startCamera()
     }
     
     deinit {
@@ -143,10 +139,9 @@ final class FSVideoCameraView: UIView {
     }
     
     func stopCamera() {
-        if self.isRecording {
-            self.toggleRecording()
+        if isRecording {
+            toggleRecording()
         }
-        
         session?.stopRunning()
     }
     
@@ -155,9 +150,7 @@ final class FSVideoCameraView: UIView {
     }
     
     @IBAction func flipButtonPressed(_ sender: UIButton) {
-        
         guard let session = session else { return }
-        
         session.stopRunning()
         
         do {
@@ -192,7 +185,6 @@ final class FSVideoCameraView: UIView {
     @IBAction func flashButtonPressed(_ sender: UIButton) {
         do {
             guard let device = device else { return }
-            
             try device.lockForConfiguration()
             let mode = device.flashMode
             switch mode {
@@ -236,11 +228,10 @@ extension FSVideoCameraView: AVCaptureFileOutputRecordingDelegate {
 fileprivate extension FSVideoCameraView {
     
     func toggleRecording() {
-        
         guard let videoOutput = videoOutput else { return }
         self.isRecording = !self.isRecording
         let shotImage = self.isRecording ? videoStopImage : videoStartImage
-        self.shotButton.setImage(shotImage, for: UIControlState())
+        shotButton.setImage(shotImage, for: UIControlState())
         
         if self.isRecording {
             
