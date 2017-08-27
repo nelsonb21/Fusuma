@@ -90,33 +90,29 @@
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="sCN-QB-mCu" firstAttribute="width" secondItem="cph-QM-jcJ" secondAttribute="width" id="2jt-55-Nly"/>
-                        <constraint firstItem="sCN-QB-mCu" firstAttribute="width" secondItem="8ew-Zi-63G" secondAttribute="width" id="abd-Rr-Yda"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="njZ-NF-b4z" secondAttribute="bottom" id="02C-R6-liR"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0LO-IV-he7"/>
-                <constraint firstItem="RIt-Tt-mDz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4bl-dl-prQ"/>
+                <constraint firstItem="RIt-Tt-mDz" firstAttribute="centerX" secondItem="CFH-FU-LPW" secondAttribute="centerX" id="3ai-H9-Krh"/>
                 <constraint firstAttribute="trailing" secondItem="CFH-FU-LPW" secondAttribute="trailing" id="J3I-dU-SJx"/>
                 <constraint firstAttribute="trailing" secondItem="2FB-nh-pGx" secondAttribute="trailing" id="Ke7-wP-Jnx"/>
+                <constraint firstItem="RIt-Tt-mDz" firstAttribute="centerY" secondItem="CFH-FU-LPW" secondAttribute="centerY" id="Kfs-jb-aSv"/>
                 <constraint firstAttribute="trailing" secondItem="njZ-NF-b4z" secondAttribute="trailing" id="Ob6-wx-U1c"/>
-                <constraint firstItem="2FB-nh-pGx" firstAttribute="top" secondItem="RIt-Tt-mDz" secondAttribute="bottom" id="Oc3-i3-gvE"/>
                 <constraint firstItem="2FB-nh-pGx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qd2-OJ-gr6"/>
                 <constraint firstItem="2FB-nh-pGx" firstAttribute="top" secondItem="1Pk-29-mUG" secondAttribute="bottom" id="S2c-0X-0qP"/>
                 <constraint firstItem="njZ-NF-b4z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wsa-j5-7bv"/>
-                <constraint firstItem="RIt-Tt-mDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ayr-cR-Dwl"/>
+                <constraint firstItem="RIt-Tt-mDz" firstAttribute="height" secondItem="CFH-FU-LPW" secondAttribute="height" id="c5m-gD-r2X"/>
                 <constraint firstAttribute="bottom" secondItem="2FB-nh-pGx" secondAttribute="bottom" id="cZ0-xA-QEC"/>
                 <constraint firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="dqx-Do-Jr9"/>
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gvd-qW-Mru"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pAu-vo-YZi"/>
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pUS-je-GE0"/>
-                <constraint firstAttribute="trailing" secondItem="RIt-Tt-mDz" secondAttribute="trailing" id="tbs-n6-4bJ"/>
                 <constraint firstItem="2FB-nh-pGx" firstAttribute="top" secondItem="CFH-FU-LPW" secondAttribute="bottom" id="th5-Gc-A6E"/>
                 <constraint firstItem="njZ-NF-b4z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="unD-hJ-K2Q"/>
+                <constraint firstItem="RIt-Tt-mDz" firstAttribute="width" secondItem="CFH-FU-LPW" secondAttribute="width" id="w0r-OW-rpW"/>
             </constraints>
         </view>
     </objects>

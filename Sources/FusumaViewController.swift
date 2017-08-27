@@ -250,7 +250,7 @@ public struct ImageMetadata {
         cameraView.initialize()
         
         if hasVideo {
-            videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
+            videoView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
             videoView.layoutIfNeeded()
             videoView.initialize()
         }
